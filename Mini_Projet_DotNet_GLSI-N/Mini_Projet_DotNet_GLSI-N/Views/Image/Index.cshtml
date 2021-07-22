@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Télécharger une image</h1>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Image" asp-action="index">
+
+    <input type="file" name="ifile" class="btn btn-outline-info" />
+    <input type="submit" value="upload" class="btn btn-primary" />
+    @if (ViewBag.Message != null)
+    {
+        <h5 class="alert alert-danger">@ViewBag.Message</h5>
+    }
+    <hr />
+    <table class="table">
+
+        <tr>
+
+            <th>Nom</th>
+            <th>Image</th>
+        </tr>
+
+        @foreach (var img in Model)
+        {
+            <tr>
+
+
+                <td>@img.Nom</td>
+                <td><img src="~/Uploads/@img.Nom" height="120" width="240" /></td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@img.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@img.Id" class="btn btn-danger">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+</form>

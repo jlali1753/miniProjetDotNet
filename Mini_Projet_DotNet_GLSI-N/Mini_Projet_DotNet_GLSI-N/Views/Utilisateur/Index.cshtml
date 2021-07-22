@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Mini_Projet_DotNet_GLSI_N.Models.Utilisateur>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Utilisateur</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.motdepasse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.motdepasse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.role)
+
+                </td>
+                <td>
+
+                    <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

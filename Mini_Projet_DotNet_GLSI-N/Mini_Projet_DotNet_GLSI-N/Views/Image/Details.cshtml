@@ -1,0 +1,46 @@
+﻿@model Mini_Projet_DotNet_GLSI_N.Models.Image
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Image</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Chemin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Chemin)
+        </dd>
+       </hr>
+           
+
+
+                
+                <td><img src="~/Uploads/@Model.Nom" height="220" width="440" /></td>
+               
+
+           
+        
+
+        </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+</div>
